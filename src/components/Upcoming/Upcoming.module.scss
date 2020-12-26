@@ -1,0 +1,96 @@
+.contentContainer {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 5px 15px;
+
+    .Card {
+        width: 100%;
+        min-width: 100%;
+        display: flex;
+
+        .imgbox {
+            max-width: 50%;
+            max-height: 350px;
+            display: block;
+
+            img {
+                max-width: 100%;
+                max-height: 350px;
+                object-fit: cover;
+            }
+        }
+
+        .CardText {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 50%;
+            width: 70%;
+            
+
+            div {
+                height: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: flex-end;
+                
+                button {
+                    color: white;
+                    padding: 5px 25px;
+                    font-size: 1.5em;
+                    background-color: orange;
+                    border: none;
+                    border-radius: 6px;
+    
+                    &:focus {
+                        outline: none;
+                    }
+                }
+    
+                h4 {
+                    width: 100%;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                    text-align: right;
+                    
+                }
+    
+                h6 {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.5em;
+    
+                    i {
+                        margin: 0 0.5em;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+.Nav {
+    display: flex;
+    justify-content: space-between;
+    
+
+    .prev , .next {
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: all, .5s all;
+
+        &:hover i {
+            transform: scale(1.5);
+            transition: all, .5s all;
+        }
+
+        i {
+            font-size: 1.5em;
+            transition: all, .5s all;
+        }
+    }
+}

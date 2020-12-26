@@ -1,0 +1,30 @@
+$bg-color: #284B63;
+$icon-color: white;
+
+.container {
+    
+    background: lighten($bg-color , 7); 
+
+    .contentContainer {
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            color: darken($icon-color , 20);
+            font-size: 1.4em;
+            cursor: pointer;
+            margin: 0 0.5em;
+
+            &:hover {
+                color: lighten($icon-color , 15);
+            }
+        }
+
+        h4 {
+            color: var(--text-color);
+            font-size: 1em;
+        }
+    }
+}

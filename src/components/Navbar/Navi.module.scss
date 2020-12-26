@@ -1,0 +1,13 @@
+.container {
+    background: var(--navbar-bg-color);
+
+    .navbar-nav {
+        a {
+            color: var(--text-color) !important;
+    
+            &:hover {
+                color: var(--text-hover-color) !important;
+            }
+        }
+    }
+}
