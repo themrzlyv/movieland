@@ -7,7 +7,8 @@ import GeneralConsumer from '../components/Contex/Contex'
 import styles from '../styles/Home.module.scss'
 
 
-const Home = ({UpcomingMovie , topratedMovies, page}) => {
+const Home = ({UpcomingMovie , topratedMovies, trendlist, page}) => {
+    
     return (
         <GeneralConsumer>
             {
@@ -20,7 +21,7 @@ const Home = ({UpcomingMovie , topratedMovies, page}) => {
                                     <TopRatedMovies topratedMovies={topratedMovies} page={page} />
                                 </div>
                                 <div className="col-lg-4">
-                                    <Trending/>
+                                    <Trending trendlist={trendlist}/>
                                     <TvPopular/>
                                     <PersonPopular/>
                                 </div>
@@ -45,10 +46,15 @@ export const getServerSideProps = async ( { query: { page = 1} } ) => {
     const upcoming_res = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.API_KEY}&language=en-US&page=1`)
     const UpcomingMovie = await upcoming_res.json();
 
+    const trendlist_res = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.API_KEY}`)
+
+    const trendlist = await trendlist_res.json();
+
     return {
         props: {
             UpcomingMovie,
             topratedMovies: toprated.results,
+            trendlist,
             page: +page
         }
     }
