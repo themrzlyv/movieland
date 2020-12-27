@@ -11,7 +11,24 @@ const TopRatedDetails = ({data}) => {
                             <img  src={`${process.env.API_IMAGE_URL}${data.poster_path}`} alt=""/>
                         </div>
                         <div className={styles.cardtext}>
-
+                            <div>
+                                <button style={data.vote_average < 6 ? {backgroundColor: 'red'} : null}>
+                                <i className="fas fa-crown"></i>
+                                {data.vote_average}
+                                </button>
+                                <h2>{data.title}</h2>
+                                <h4>Genres: {data.genres[0].name}</h4>
+                                <h5>
+                                <i className="fas fa-language"></i>
+                                {data.original_language}
+                                </h5>
+                                {data.budget == 0 ? null : (<h5>Movie Budget: {data.budget} <i className="fas fa-dollar-sign"></i></h5>)}
+                                <h6>
+                                <i className="fas fa-info"></i>
+                                {data.status}
+                                </h6>
+                                <p>{data.overview}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

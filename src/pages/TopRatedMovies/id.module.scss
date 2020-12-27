@@ -1,0 +1,114 @@
+.Card {
+    max-height: 500px;
+    height: 100%;
+    margin: 50px;
+    background: white;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .imgbox {
+        min-width: 40%;
+        height: 100%;
+       
+
+        img {
+            min-width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+    }
+
+    .cardtext {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            
+
+            button {
+                color: white;
+                padding: 8px 40px;
+                font-size: 1em;
+                font-weight: 600;
+                background: none;
+                border-radius: 8px;
+                margin: 20px 20px 5px 0px;
+                border: none;
+                background: #4298b5;
+                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            
+                i {
+                    margin: 0 3px;
+                }
+            }
+
+            h2 {
+                font-size: 1.8em;
+                font-weight: 600;
+                margin: 3px 20px 5px 0px;
+                text-shadow: 0 1px 0 #ccc, 
+                    0 2px 0 #c9c9c9,
+                    0 3px 0 #bbb,
+                    0 4px 0 #b9b9b9,
+                    0 5px 0 #aaa,
+                    0 6px 1px rgba(0,0,0,.1),
+                    0 0 5px rgba(0,0,0,.1),
+                    0 1px 3px rgba(0,0,0,.3),
+                    0 3px 5px rgba(0,0,0,.2),
+                    0 5px 10px rgba(0,0,0,.25),
+                    0 10px 10px rgba(0,0,0,.2),
+                    0 20px 20px rgba(0,0,0,.15);
+            }
+
+            h4 {
+                font-size: 1.2em;
+                font-weight: 500;
+                margin: 5px 20px 5px 0px;
+            }
+
+            h5 {
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                font-size: 1.2em;
+                font-weight: 500;
+                margin: 10px 20px 5px 0px;
+                i {
+                    font-size: 1.2em;
+                    margin: 0 5px;
+                }
+            }
+
+            h6 {
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                font-size: 1em;
+                font-weight: 400;
+                margin: 10px 20px 5px 0px;
+                i {
+                    color: green;
+                    font-size: 1em;
+                    margin: 0 5px;
+                }
+            }
+
+            p {
+                font-size: 1em;
+                text-align: justify;
+                margin: 3px 5px;
+
+                &::first-letter {
+                    font-size: 1.5em;
+                    color: crimson;
+                }
+            }
+        }
+    }
+}
