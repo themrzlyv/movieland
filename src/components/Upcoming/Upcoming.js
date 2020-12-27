@@ -23,7 +23,7 @@ const Upcoming = ({UpcomingMovie}) => {
   }
 
   const { results } = UpcomingMovie;
-  console.log(results)
+  
   return (
       <div className={`container mt-3`}>
           <div className="row">
@@ -31,13 +31,16 @@ const Upcoming = ({UpcomingMovie}) => {
                   <div className={styles.contentContainer} ref={myRef}>
                           {
                               results.map(item => (
-                                  <div className={styles.Card}>
+                                  <div key={item.id} className={styles.Card}>
                                     <div className={styles.imgbox}>
-                                      <img key={item.id} src={`${process.env.API_IMAGE_URL}${item.poster_path}`} alt=""/>
+                                      <img  src={`${process.env.API_IMAGE_URL}${item.poster_path}`} alt=""/>
                                     </div>
                                     <div className={styles.CardText}>
                                       <div>
-                                        <button> <i className="far fa-star"></i> {item.vote_average}</button>
+                                        <button style={item.vote_average < 7 ? {backgroundColor:'red'} : null}> 
+                                            <i className="far fa-star"></i> 
+                                            {item.vote_average}
+                                        </button>
                                         <h4>{item.title}</h4>
                                         <h6> <i className="fas fa-language"></i> {item.original_language}</h6>
                                         <p>Release Date: {item.release_date}</p>

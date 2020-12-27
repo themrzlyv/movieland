@@ -1,0 +1,139 @@
+.header {
+    
+    h4 {
+        font-size: 2em;
+        i {
+            color: orange;
+            margin: 0 15px ;
+        }
+    }
+}
+
+.Card {
+    width: 100%;
+    max-height: 300px;
+    display: flex;
+    margin: 15px 0;
+    background: #2f7277;
+    border-radius: 6px;
+    box-shadow: -20px 36px 19px -22px;
+
+    .imgbox {
+        width: 35%;
+        max-width: 35%;
+        min-height: 100%;
+        margin: 10px 5px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 5px 15px;
+            border-radius: 6px;
+        }
+    }
+
+    .cardtext {
+        width: 65%;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        div {
+            width: 95%;
+            height: 98%;
+            margin: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            
+
+            h2{
+                color: var(--text-color);
+                font-weight: 500;
+                margin: 5px 0;
+                font-size: 1.3em;
+            }
+
+            h4 {
+                color: var(--text-hover-color);
+                font-size: 1em;
+                margin: 0.5em 0;
+                i {
+                    margin: 0 5px;
+                }
+            }
+
+            p {
+                
+                font-size: 0.8em;
+                text-align: justify;
+
+                &::first-letter {
+                    text-transform: uppercase;
+                    font-size: 2em;
+                    color: rgb(116, 8, 138);
+                    letter-spacing: 3px;
+                }
+            }
+
+            button {
+                font-size: 1em;
+                background: whitesmoke;
+                border-radius: 6px;
+                padding: 3px 15px;
+                border: none;
+                margin: 5px 0;
+                
+
+                i {
+                    margin: 0 5px;
+                }
+            }
+
+            h5 {
+                font-size: 1em;
+                margin: 0.3em 0;
+                i {
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+
+}
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+
+    button {
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        padding: 5px 15px;
+        background: none;
+        border-radius: 10px;
+        border: none;
+
+        i {
+            font-size: 1em;
+            margin: 0 5px;
+        }
+    }
+
+    h4 {
+        background: none;
+        border: none;
+        width: 2em;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 1.3em;
+        font-weight: 600;
+        align-self: center;
+        
+    }
+}

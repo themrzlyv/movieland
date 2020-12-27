@@ -9,7 +9,7 @@ const Navi = () => {
                 <div className="container-fluid">
                     <a className="navbar-brand">MovieLand</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                      <span className="navbar-toggler-icon"></span>
+                      <span className="fas fa-align-right"></span>
                     </button>
                     <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                       <div className="navbar-nav w-50 justify-content-evenly">
