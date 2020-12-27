@@ -8,6 +8,7 @@
         height: 300px;
         margin: 20px 0;
         display: flex;
+        position: relative;
         flex-direction: column;
 
         .imgbox {
@@ -24,6 +25,25 @@
                 box-shadow: 0 5px 15px;
             }
 
+        }
+
+        .cardtext {
+            width: 84%;
+            height: 84%;
+            position: absolute;
+            border-radius: 7px;
+            top: 7%;
+            left: 7%;
+            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.3),
+                        0px 20px 15px 0px rgba(0, 0, 0, 0.6);
+
+            h4 {
+                margin-top: 60%;
+                margin-left: 10%;
+                color: white;
+                font-size: 1.5em;
+                font-weight: 600;
+            }
         }
 
 
