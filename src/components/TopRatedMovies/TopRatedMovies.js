@@ -1,7 +1,7 @@
 import styles from './TopRatedMovies.module.scss'
 import Router from 'next/router'
 import { useState ,useEffect } from 'react'
-
+import Link from 'next/link'
 
 
 
@@ -62,10 +62,12 @@ const TopRatedMovies = ({topratedMovies, page}) => {
                                         <p>
                                             {movie.overview.length > 330 ? movie.overview.substring(20, 130) : movie.overview}
                                         </p>
-                                        <button>
-                                        Read More
-                                        <i class="far fa-hand-point-right"></i>
-                                        </button>
+                                        <Link href={`/TopRatedMovies/${movie.id}`}>
+                                            <button>
+                                            Read More
+                                            <i className="far fa-hand-point-right"></i>
+                                            </button>
+                                        </Link>
                                         <h5>
                                         <i className="far fa-calendar-alt"></i>
                                         {movie.release_date}
