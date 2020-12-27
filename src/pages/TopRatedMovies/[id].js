@@ -2,7 +2,6 @@ import styles from './id.module.scss'
 
 const TopRatedDetails = ({data}) => {
     const {production_companies} = data
-    console.log(data)
     return (
         <div className='container'>
             <div className="row">
@@ -18,7 +17,9 @@ const TopRatedDetails = ({data}) => {
                                 {data.vote_average}
                                 </button>
                                 <h2>{data.title}</h2>
-                                <h4>Genres: {data.genres[0].name}</h4>
+                                {
+                                    data.genres.length > 0 ? (<h4>Genre: {data.genres[0].name}</h4>) : null
+                                }
                                 <h5>
                                 <i className="fas fa-language"></i>
                                 {data.original_language}
@@ -38,32 +39,36 @@ const TopRatedDetails = ({data}) => {
                 <div className="col-lg-12">
                     <div className={styles.productions}>
                         <table>
-                            <tr>
-                                <th>
-                                    Company Logo
-                                </th>
-                                <th>
-                                    Company Name
-                                </th>
-                                <th>
-                                    Country Name
-                                </th>
-                            </tr>
-                            {
-                                production_companies.map(item => (
-                                    <tr key={item.id}>
-                                        <td>
-                                            <img  src={`${process.env.API_IMAGE_URL}${item.logo_path}`} alt=""/>
-                                        </td>
-                                        <td>
-                                            {item.name}
-                                        </td>
-                                        <td>
-                                            {item.origin_country}
-                                        </td>
-                                    </tr>
-                                ))
-                            }
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Company Logo
+                                    </th>
+                                    <th>
+                                        Company Name
+                                    </th>
+                                    <th>
+                                        Country Name
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    production_companies.map(item => (
+                                        <tr key={item.id}>
+                                            <td>
+                                                <img  src={`${process.env.API_IMAGE_URL}${item.logo_path}`} alt=""/>
+                                            </td>
+                                            <td>
+                                                {item.name}
+                                            </td>
+                                            <td>
+                                                {item.origin_country}
+                                            </td>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
                         </table>
                     </div>
                     <div className={styles.Conclution}>

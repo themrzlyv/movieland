@@ -5,10 +5,9 @@ import Trending from '../components/Trending/Trending'
 import TvPopular from '../components/TvPopular/TvPopular'
 import GeneralConsumer from '../components/Contex/Contex'
 import styles from '../styles/Home.module.scss'
-import Router from 'next/router'
+
 
 const Home = ({UpcomingMovie , topratedMovies, page}) => {
-    console.log(page)
     return (
         <GeneralConsumer>
             {
