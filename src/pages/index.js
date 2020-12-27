@@ -8,6 +8,7 @@ import styles from '../styles/Home.module.scss'
 import Router from 'next/router'
 
 const Home = ({UpcomingMovie , topratedMovies, page}) => {
+    console.log(page)
     return (
         <GeneralConsumer>
             {

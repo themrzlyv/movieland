@@ -1,6 +1,7 @@
 import styles from './id.module.scss'
 
 const TopRatedDetails = ({data}) => {
+    const {production_companies} = data
     console.log(data)
     return (
         <div className='container'>
@@ -29,6 +30,51 @@ const TopRatedDetails = ({data}) => {
                                 </h6>
                                 <p>{data.overview}</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className={styles.productions}>
+                        <table>
+                            <tr>
+                                <th>
+                                    Company Logo
+                                </th>
+                                <th>
+                                    Company Name
+                                </th>
+                                <th>
+                                    Country Name
+                                </th>
+                            </tr>
+                            {
+                                production_companies.map(item => (
+                                    <tr key={item.id}>
+                                        <td>
+                                            <img  src={`${process.env.API_IMAGE_URL}${item.logo_path}`} alt=""/>
+                                        </td>
+                                        <td>
+                                            {item.name}
+                                        </td>
+                                        <td>
+                                            {item.origin_country}
+                                        </td>
+                                    </tr>
+                                ))
+                            }
+                        </table>
+                    </div>
+                    <div className={styles.Conclution}>
+                        <div>
+                            <a href={data.homepage}>Movie's Page</a>
+                        </div>
+                        <div>
+                            <h6>{data.tagline}</h6>
+                        </div>
+                        <div>
+                            <p>{data.release_date}</p>
                         </div>
                     </div>
                 </div>
