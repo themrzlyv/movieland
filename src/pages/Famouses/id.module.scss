@@ -1,0 +1,25 @@
+.imgbox {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid orchid;
+
+    img {
+        max-width: 100%;
+        max-height: 500px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-top: 10px;
+        font-weight: 600;
+    }
+
+    
+}
+
+
+.cardtext {
+    border: 1px solid blue;
+}
