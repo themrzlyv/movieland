@@ -12,11 +12,9 @@ const Navi = () => {
                       <span className="fas fa-align-right"></span>
                     </button>
                     <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                      <div className="navbar-nav w-50 justify-content-evenly">
+                      <div className="navbar-nav w-25 justify-content-evenly">
                         <a className="nav-link">Home</a>
                         <a className="nav-link">Features</a>
-                        <a className="nav-link">Pricing</a>
-                        <a className="nav-link">Pricing</a>
                       </div>
                     </div>
                 </div>
