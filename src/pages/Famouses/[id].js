@@ -13,19 +13,15 @@ const Famouses = ({data}) => {
                     <h5>{data.place_of_birth}</h5>
                 </div>
                 <div className={`col-lg-8 ${styles.cardtext}`}>
-                    
-                    
+                    <h4>Biography</h4>
                     <p>{data.biography}</p>
+                    <h4>Popular Movies</h4>
                     <p>{data.also_known_as}</p>
-                    
                 </div>
             </div>
             <div className="row">
-                <div className="col-lg-5">
+                <div className={`col-lg-12 ${styles.footer}`}>
                     <a href={data.homepage}>Official Website</a>
-                </div>
-                <div className="col-lg-7">
-                    
                 </div>
             </div>
         </div>
