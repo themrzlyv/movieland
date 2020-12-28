@@ -3,7 +3,7 @@ import styles from './Navi.module.scss'
 
 const Navi = () => {
   return (
-        <div className={`${styles.container} container-fluid`}>
+        <div className={`${styles.container} fixed-top container-fluid`}>
           <div className='container'>
             <nav className={`navbar navbar-expand-lg navbar-dark`}>
                 <div className="container-fluid">

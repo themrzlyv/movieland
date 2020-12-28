@@ -3,7 +3,7 @@ import styles from './PersonPopular.module.scss'
 const PersonPopular = ({personpopular}) => {
     personpopular.length > 5 ? personpopular.splice(5) : personpopular
     return (
-        <div className='container mt-5'>
+        <div className='container mt-5 sticky-lg-top'>
             <div className="row">
                 <div className="col-lg-12">
                     <div className={styles.header}>
