@@ -39,58 +39,61 @@ const TopRatedMovies = ({topratedMovies, page}) => {
     return (
         <div className='container mt-5'>
             <div className="row">
+                <div className={`col-lg-12 ${styles.header}`}>
+                    <h4>
+                        <i className="fas fa-star-half-alt"></i>
+                        Top Rated Movies
+                    </h4>
+                </div>
+            </div>
+            <div className="row">
                 <div className="col-lg-12">
-                    <div className={styles.header}>
-                        <h4>
-                            <i className="fas fa-star-half-alt"></i>
-                            Top Rated Movies
-                        </h4>
-                    </div>
-                    <div className="moviecard m-2">
-                        {topratedMovies.map(movie => (
-                            <div key={movie.id} className={styles.Card}>
-                                <div className={styles.imgbox}>
-                                    <img  src={`${process.env.API_IMAGE_URL}${movie.poster_path}`} alt=""/>
-                                </div>
-                                <div className={styles.cardtext}>
-                                    <div>
+                    {
+                        topratedMovies.map(movie => (
+                            <div key={movie.id} className={`container ${styles.Card}`}>
+                                <div className="row">
+                                    <div className={`col-lg-4 ${styles.imgbox}`}>
+                                        <img  src={`${process.env.API_IMAGE_URL}${movie.poster_path}`} alt=""/>
+                                    </div>
+                                    <div className={`col-lg-8 ${styles.cardtext}`}>
                                         <h2>{movie.title}</h2>
                                         <h4>
-                                        <i className="fas fa-users"></i>
-                                        {movie.popularity}
+                                            <i className="fas fa-users"></i>
+                                            {movie.popularity}
                                         </h4>
                                         <p>
-                                            {movie.overview.length > 330 ? movie.overview.substring(20, 130) : movie.overview}
+                                            {movie.overview.length > 100 ? movie.overview.substring(0, 160) : movie.overview}
                                         </p>
                                         <Link href={`/TopRatedMovies/${movie.id}`}>
                                             <button>
-                                            Read More
-                                            <i className="far fa-hand-point-right"></i>
+                                                Read More
+                                                <i className="far fa-hand-point-right"></i>
                                             </button>
                                         </Link>
                                         <h5>
-                                        <i className="far fa-calendar-alt"></i>
-                                        {movie.release_date}
+                                            <i className="far fa-calendar-alt"></i>
+                                            {movie.release_date}
                                         </h5>
                                     </div>
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                    <div className={styles.nav}>
-                        <button disabled={prevdisable} onClick={changePageMinus}>
-                            <i className="fas fa-arrow-alt-circle-left"></i>Prev
-                        </button>
-                        <h4>{page}</h4>
-                        <button  disabled={nextdisable} onClick={changePagePlus}>
-                            Next
-                            <i className="fas fa-arrow-alt-circle-right"></i>
-                        </button>
-                    </div>
+                        ))
+                    }
                 </div>
             </div>
             
-            
+            <div className="row">
+                <div className={`col-lg-12 ${styles.nav}`}>
+                    <button disabled={prevdisable} onClick={changePageMinus}>
+                        <i className="fas fa-arrow-alt-circle-left"></i>Prev
+                    </button>
+                    <h4>{page}</h4>
+                    <button  disabled={nextdisable} onClick={changePagePlus}>
+                        Next
+                        <i className="fas fa-arrow-alt-circle-right"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     )
 }

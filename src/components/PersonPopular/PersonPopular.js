@@ -10,35 +10,40 @@ const PersonPopular = ({personpopular}) => {
     return (
         <div className='container mt-5 sticky-lg-top'>
             <div className="row">
+                <div className={`${styles.header} col-lg-12`}>
+                    <h4>
+                        <p>
+                            famouses
+                        </p>
+                    </h4>
+                </div>
+            </div>
+
+            <div className="row">
                 <div className="col-lg-12">
-                    <div className={styles.header}>
-                        <h4>
-                            <p>
-                                famouses
-                            </p>
-                        </h4>
-                    </div>
-                    <div className={styles.container}>
-                        {
-                            personpopular.map(item => (
-                                <div key={item.id} className={styles.card}>
-                                        <div className={styles.imgbox}>
+                    {
+                        personpopular.map(item => (
+                            <Link key={item.id} href={`/Famouses/${item.id}`}>
+                                <div  className={`container ${styles.card}`}>
+                                    <div className="row">
+                                        <div className={`col-lg-12 ${styles.imgbox}`}>
                                             <img  src={`${process.env.API_IMAGE_URL}${item.profile_path}`} alt=""/>
                                         </div>
-                                        <Link href={`/Famouses/${item.id}`}>
-                                            <div className={styles.cardtext}>
-                                                <button>
+                                    </div>
+                                    <div className="row">
+                                        <div className={`col-lg-12 ${styles.cardtext}`}>
+                                            <button>
                                                 <i className="fas fa-fire-alt"></i>
                                                 {item.popularity}
-                                                </button>
-                                                <h4>{item.name}</h4>
-                                                {item.gender == 1 ? (<h5> <i className="fas fa-venus"></i> Woman</h5>) : (<h5> <i className="fas fa-mars"></i> Man</h5>)}
-                                            </div>
-                                        </Link>
+                                            </button>
+                                            <h4>{item.name}</h4>
+                                            {item.gender == 1 ? (<i className="fas fa-venus"></i>) : (<i className="fas fa-mars"></i>)}
+                                        </div>
+                                    </div>
                                 </div>
-                            ))
-                        }
-                    </div>
+                            </Link>
+                        ))
+                    }
                 </div>
             </div>
         </div>
