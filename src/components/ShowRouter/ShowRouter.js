@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 
 const ShowRouter = () => {
     const router = useRouter();
-    console.log(router)
     return (
         <div className='container mt-5'>
             <div className="row">

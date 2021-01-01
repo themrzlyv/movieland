@@ -18,6 +18,11 @@ const Navi = () => {
                         <a className="nav-link">
                             <i className="far fa-bookmark"></i>
                         </a>
+                        <Link href={`/Searchbox/`}>
+                          <a className="nav-link">
+                              <i className="fas fa-search"></i>
+                          </a>
+                        </Link>
                         <a className="nav-link">
                             <i className="fas fa-headset"></i>
                         </a>

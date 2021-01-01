@@ -1,4 +1,7 @@
 import styles from './Trending.module.scss'
+import Link from 'next/link'
+
+
 
 const Trending = ({trendlist}) => {
     const {results} = trendlist
@@ -19,7 +22,9 @@ const Trending = ({trendlist}) => {
                 <div className={`col-lg-12 d-flex flex-column align-items-center ${styles.imgbox}`}>
                     {
                         results.map(item => (
-                            <img key={item.id}  src={`${process.env.API_IMAGE_URL}${item.poster_path}`} alt=""/>
+                            <Link key={item.id} href={`/TopRatedMovies/${item.id}`}>
+                                <img key={item.id}  src={`${process.env.API_IMAGE_URL}${item.poster_path}`} alt=""/>
+                            </Link>
                         ))
                     }
                 </div>
