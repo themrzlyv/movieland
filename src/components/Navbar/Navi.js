@@ -1,7 +1,16 @@
 import styles from './Navi.module.scss'
 import Link from 'next/link'
+import {parseCookies} from 'nookies'
+import cookie from 'js-cookie'
+
+
+
 
 const Navi = () => {
+
+  const cookieuser = parseCookies()
+  const user = cookieuser.user ? JSON.parse(cookieuser.user) : ''
+
   return (
         <div className={`${styles.container} fixed-top container-fluid`}>
           <div className='container'>
@@ -15,17 +24,42 @@ const Navi = () => {
                     </button>
                     <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                       <div className="navbar-nav w-25 justify-content-evenly">
-                        <a className="nav-link">
-                            <i className="far fa-bookmark"></i>
-                        </a>
                         <Link href={`/Searchbox/`}>
                           <a className="nav-link">
                               <i className="fas fa-search"></i>
                           </a>
                         </Link>
-                        <a className="nav-link">
-                            <i className="fas fa-headset"></i>
-                        </a>
+                        {
+                          user ? 
+                            <>
+                              <Link href={`/account/`}>
+                                <a className="nav-link">
+                                    <i className="fas fa-user-circle"></i>
+                                </a>
+                              </Link>
+                              <Link href={`/`}>
+                                <a className="nav-link" onClick={() => {
+                                  cookie.remove('token')
+                                  cookie.remove('user')
+                                }}>
+                                    <i className="fas fa-user-times"></i>
+                                </a>
+                              </Link>
+                            </>
+                          : 
+                            <>
+                              <Link href={`/register/`}>
+                                <a className="nav-link">
+                                    <i className="fas fa-users"></i>
+                                </a>
+                              </Link>
+                              <Link href={`/login/`}>
+                                <a className="nav-link">
+                                    <i className="fas fa-sign-in-alt"></i>
+                                </a>
+                              </Link>
+                            </>
+                        }
                       </div>
                     </div>
                 </div>
