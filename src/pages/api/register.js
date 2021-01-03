@@ -1,4 +1,5 @@
 import User from '../../models/User'
+import BookMark from '../../models/Bookmark'
 import DbConnect from '../../helpers/DbConnect'
 import bcrypt from 'bcryptjs'
 
@@ -20,6 +21,7 @@ export default async (req,res)=>{
             email,
             password:hashedPassword
         }).save()
+        await new BookMark({user:newUser._id}).save()
         res.status(201).json({message:"signup success"})
     }catch(err){
         console.log(err)

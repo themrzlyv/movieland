@@ -34,8 +34,16 @@ export const getServerSideProps = async (ctx) => {
         res.end()
     }
 
+    const res = await fetch(`${process.env.LOCAL_SERVER}/api/bookmark` , {
+        headers: {
+            "Authorization":token
+        }
+    })
+
+    const movielist = await res.json()
+
     return{
-        props: {}
+        props: {movielist}
     }
 }
 

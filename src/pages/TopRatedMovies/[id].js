@@ -1,7 +1,24 @@
 import styles from './id.module.scss'
+import {parseCookies} from 'nookies'
+
 
 const TopRatedDetails = ({data}) => {
     const {production_companies} = data
+    const cookie = parseCookies()
+    const user = cookie.user ? JSON.parse(cookie.user) : ''
+
+
+    const addtoMovielist = async () => {
+        const res = await fetch(`${process.env.LOCAL_SERVER}/api/bookmark` , {
+            method: "PUT",
+            headers: {
+                "Content-Type":"application/json",
+                "Authorization":cookie.token
+            },
+            body: JSON.stringify(data)
+        })
+    }
+
     return (
         <div className="container">
             <div className="row">
@@ -27,6 +44,12 @@ const TopRatedDetails = ({data}) => {
                         {data.status}
                     </h6>
                     <p>{data.overview}</p>
+                    {
+                        user ? 
+                            <button onClick={() => addtoMovielist()}>Add to List</button>
+                        :
+                            null
+                    }
                 </div>
             </div>
 
