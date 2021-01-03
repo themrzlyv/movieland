@@ -1,0 +1,47 @@
+.header {
+    margin: 20px 0;
+    
+
+    h4 {
+        padding: 5px 25px;
+        width: max-content;
+        font-size: 1.5em;
+        font-weight: 600;
+        text-transform: uppercase;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    }
+}
+
+.form {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+    form {
+        margin: 20px 0;
+        
+        div {
+            width: 30%;
+            margin: 10px 0;
+
+            input {
+                border: none;
+                border-radius: 6px;
+
+                &:focus {
+                    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+
+        button {
+            margin: 5px 0;
+            color: white;
+            background: var(--navbar-bg-color);
+            padding: 5px 15px;
+            border-radius: 6px;
+            border: none;
+        }
+    }
+}

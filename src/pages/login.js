@@ -1,6 +1,9 @@
 import {useState} from 'react'
 import {useRouter} from 'next/router'
 import cookie from 'js-cookie'
+import styles from '../styles/Login.module.scss'
+
+
 
 const Login = () => {
     const [email, setemail] = useState('')
@@ -30,7 +33,12 @@ const Login = () => {
     return (
         <div className='container'>
             <div className="row">
-                <div className="col-lg-12">
+                <div className={`${styles.header} col-lg-5`}>
+                    <h4>Login</h4>
+                </div>
+            </div>
+            <div className="row">
+                <div className={`${styles.form} col-lg-12`}>
                     <form onSubmit={HandleSubmit}>
                         <div className="form-group">
                             <input
@@ -47,8 +55,7 @@ const Login = () => {
                             placeholder="Password"/>
                         </div>
                         <button 
-                        type="submit" 
-                        className="btn btn-outline-info">
+                        type="submit">
                             Login
                         </button>
                     </form>

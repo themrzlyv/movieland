@@ -1,15 +1,26 @@
 import React from 'react'
 import {parseCookies} from 'nookies'
+import styles from '../styles/Account.module.scss'
+
 
 const Account = () => {
     const cookie = parseCookies()
     const user = cookie.user ? JSON.parse(cookie.user) : ''
     const profile = user.user
     return (
-        <div>
-            i am your account
-            <h4>{profile.name}</h4>
-            <h5>{profile.email}</h5>
+        <div className='container'>
+            <div className="row">
+                <div className={`${styles.header} col-lg-5`}>
+                    <h4>
+                        <i className="far fa-user-circle"></i>
+                        {profile.name}
+                    </h4>
+                    <h5>
+                        <i className="far fa-envelope"></i>
+                        {profile.email}
+                    </h5>
+                </div>
+            </div>
         </div>
     )
 }

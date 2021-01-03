@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import {useRouter} from 'next/router'
-
+import styles from '../styles/Register.module.scss'
 
 const Register = () => {
     const [email, setemail] = useState('')
@@ -29,7 +29,12 @@ const Register = () => {
     return (
         <div className='container'>
             <div className="row">
-                <div className="col-lg-12">
+                <div className={`${styles.header} col-lg-12`}>
+                    <h4>Registration</h4>
+                </div>
+            </div>
+            <div className="row ">
+                <div className={`${styles.form} col-lg-12`}>
                     <form onSubmit={HandleSubmit}>
                         <div className="form-group">
                             <input
@@ -53,8 +58,7 @@ const Register = () => {
                             placeholder="Password"/>
                         </div>
                         <button 
-                        type="submit" 
-                        className="btn btn-outline-info">
+                        type="submit">
                             Submit
                         </button>
                     </form>
